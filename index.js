@@ -38,8 +38,10 @@ const roundHandler = () =>{
     wonRound =false;
     guessBox.innerHTML+= ``;
    }
-    const mysteryWord = levelSelector();
-    guessBox.innerHTML +=`fgffghf`;
+    const mysteryWord = Array.from(levelSelector());
+    mysteryWord.forEach((letter) =>{
+        guessBox.innerHTML +=`<p class="guessBox_spaces">${letter}</p>`;
+    })
     console.log(mysteryWord);
 }
 const wonRound =() =>{
@@ -54,4 +56,4 @@ const GameOver =()=>{
 const alphaButton = document.querySelectorAll('.alphaButtons_button');
 roundHandler();
 
-//alphaButton.
+//alphaButton
