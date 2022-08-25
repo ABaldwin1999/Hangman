@@ -1,0 +1,50 @@
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+h1 {
+  text-align: center;
+  font-family: "Pacifico", cursive;
+}
+
+.gallows {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.alphaButtons {
+  width: 300px;
+  height: auto;
+  background-image: url("./wood-background.jpg");
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 20px;
+  border-radius: 5px;
+}
+.alphaButtons_button {
+  width: 10%;
+  padding: 2%;
+  margin: 2%;
+  height: auto;
+  color: white;
+  background-color: #918E85;
+  border-radius: 5px;
+}
+.alphaButtons_button:hover {
+  color: red;
+}
+
+.guessBox {
+  width: 300px;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.guessBox_spaces {
+  user-select: none;
+  text-align: center;
+  color: white;
+  text-decoration: 4px underline black;
+}
