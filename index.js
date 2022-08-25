@@ -1,11 +1,12 @@
 const alphabetArray = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","Y","X","Z"];
-const firstArray = ["QUICK","OBTUSE","GNARLED","AVARICE","PUTRID","OBSIDIAN"];
+const firstArray = ["QUICK","OBTUSE","GNARLED","AVARICE","PUTRID","OBSIDIAN","VAGABOND","VANGUARD"];
 const secondArray = [];
 const thirdArray = [];
-const fourthArray = [];
+const fourthArray = ["BLOOM","CHEESE","BLOOD"];
 const fifthArray =[];
 const sixthArray =[];
 let score = 0;
+let chances = 3;
 
 const theGallows = document.querySelector('.gallows');
 const alphaButtons = document.querySelector('.alphaButtons');
@@ -16,8 +17,12 @@ alphabetArray.forEach((letter) =>{
 })
 
 
-const guessHandler = () =>{
+const guessHandler = (button) =>{
     ////if all are true then return that we need to summon round handler again to start a new round
+    console.log("hi");
+    console.log(button.innerHTML);
+
+    ///at bottom of function if(chances==0){}
 }
 
 const levelSelector = () =>{
@@ -42,9 +47,9 @@ const roundHandler = () =>{
     mysteryWord.forEach((letter) =>{
         guessBox.innerHTML +=`<p class="guessBox_spaces">${letter}</p>`;
     })
-    console.log(mysteryWord);
 }
 const wonRound =() =>{
+    
     return false;
 }
 
@@ -56,4 +61,6 @@ const GameOver =()=>{
 const alphaButton = document.querySelectorAll('.alphaButtons_button');
 roundHandler();
 
-//alphaButton
+alphaButton.forEach((button)=>{button.addEventListener('click', () => {
+    console.log(button.innerHTML);
+});})
