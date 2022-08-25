@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&family=Rubik+Dirt&display=swap");
 h1 {
   text-align: center;
   font-family: "Pacifico", cursive;
@@ -41,10 +41,16 @@ h1 {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  padding: 20px;
 }
 .guessBox_spaces {
+  width: 10%;
   user-select: none;
-  text-align: center;
+  text-align: right;
+  font-family: "Rubik Dirt", cursive;
+  font-size: 2rem;
+  padding: 10px;
+  margin: 10px;
   color: white;
-  text-decoration: 4px underline black;
+  border-bottom: 4px solid black;
 }

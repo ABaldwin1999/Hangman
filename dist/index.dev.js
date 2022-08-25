@@ -40,8 +40,10 @@ var roundHandler = function roundHandler() {
     guessBox.innerHTML += "";
   }
 
-  var mysteryWord = levelSelector();
-  guessBox.innerHTML += "fgffghf";
+  var mysteryWord = Array.from(levelSelector());
+  mysteryWord.forEach(function (letter) {
+    guessBox.innerHTML += "<p class=\"guessBox_spaces\">".concat(letter, "</p>");
+  });
   console.log(mysteryWord);
 };
 
@@ -52,4 +54,4 @@ var wonRound = function wonRound() {
 var GameOver = function GameOver() {};
 
 var alphaButton = document.querySelectorAll('.alphaButtons_button');
-roundHandler(); //alphaButton.
+roundHandler(); //alphaButton

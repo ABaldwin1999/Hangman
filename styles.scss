@@ -1,6 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Rubik+Dirt&display=swap');
 
 $title-font:'Pacifico',cursive;
+$answer-font:'Rubik Dirt', cursive;;
 
 $button-color: #918E85;
 
@@ -47,11 +48,17 @@ h1{
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    padding: 20px;
     &_spaces{  
+        width: 10%;
         user-select: none;  
-        text-align: center;
-        color: white;
-        text-decoration: 4px underline black;
+        text-align: right;
+        font-family: $answer-font;
+        font-size: 2rem;
+        padding: 10px;
+        margin: 10px;
+        color:white;
+        border-bottom: 4px solid black;
     }
 
 }
