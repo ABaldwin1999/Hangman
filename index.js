@@ -7,6 +7,7 @@ const fifthArray =[];
 const sixthArray =[];
 let score = 0;
 let chances = 3;
+let mysteryWord = [];
 
 const theGallows = document.querySelector('.gallows');
 const alphaButtons = document.querySelector('.alphaButtons');
@@ -43,7 +44,7 @@ const roundHandler = () =>{
     wonRound =false;
     guessBox.innerHTML+= ``;
    }
-    const mysteryWord = Array.from(levelSelector());
+    mysteryWord = Array.from(levelSelector());
     mysteryWord.forEach((letter) =>{
         guessBox.innerHTML +=`<p class="guessBox_spaces">${letter}</p>`;
     })
@@ -62,5 +63,9 @@ const alphaButton = document.querySelectorAll('.alphaButtons_button');
 roundHandler();
 
 alphaButton.forEach((button)=>{button.addEventListener('click', () => {
-    console.log(button.innerHTML);
-});})
+    if(mysteryWord.includes(button.innerHTML)){
+        console.log("yep");
+    }
+});
+})
+
