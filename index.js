@@ -78,12 +78,13 @@ const roundHandler = () =>{
     })
 }
 const getWinCondition =() =>{
-    if(guessBox_spaces.every( guess => guess.style.color ="black")){
-        return true;
-    }
-    else{
-        return false;
-    }
+    let win = true;
+    guessBox_spaces.forEach((space) => {
+        if(space.style.color !=="black"){
+            win =false;
+        }
+    })
+    return win;
 }
 
 const generatePopUp =() =>{

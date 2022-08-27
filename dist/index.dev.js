@@ -76,13 +76,13 @@ var roundHandler = function roundHandler() {
 };
 
 var getWinCondition = function getWinCondition() {
-  if (guessBox_spaces.every(function (guess) {
-    return guess.style.color = "black";
-  })) {
-    return true;
-  } else {
-    return false;
-  }
+  var win = true;
+  guessBox_spaces.forEach(function (space) {
+    if (space.style.color !== "black") {
+      win = false;
+    }
+  });
+  return win;
 };
 
 var generatePopUp = function generatePopUp() {
