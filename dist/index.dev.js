@@ -1,7 +1,5 @@
 "use strict";
 
-function _readOnlyError(name) { throw new Error("\"" + name + "\" is read-only"); }
-
 var alphabetArray = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "Y", "X", "Z"];
 var firstArray = ["QUICK", "OBTUSE", "GNARLED", "AVARICE", "PUTRID", "OBSIDIAN", "VAGABOND", "VANGUARD"];
 var secondArray = [];
@@ -9,12 +7,14 @@ var thirdArray = [];
 var fourthArray = ["BLOOM", "CHEESE", "BLOOD"];
 var fifthArray = [];
 var sixthArray = [];
+var seventhArray = [];
 var score = 0;
 var mysteryWord = [];
 var countCorrectGuesses = 0;
 var theGallows = document.querySelector('.gallows');
 var alphaButtons = document.querySelector('.alphaButtons');
 var guessBox = document.querySelector('.guessBox');
+var chance = document.querySelector('.chance');
 alphabetArray.forEach(function (letter) {
   alphaButtons.innerHTML += "<button class=\"alphaButtons_button\">".concat(letter, "</button>");
 });
@@ -29,6 +29,15 @@ var GetChances = function GetChances(level) {
   }
 
   return chances;
+};
+
+var GetCurrentChances = function GetCurrentChances() {
+  return chanceBox.innerHTML;
+};
+
+var UpdateChanceBox = function UpdateChanceBox() {
+  var currentChance = GetCurrentChances();
+  chanceBox.innerHTML = currentChance - 1;
 };
 
 var guessHandler = function guessHandler(button) {
@@ -54,38 +63,69 @@ var levelSelector = function levelSelector() {
 };
 
 var roundHandler = function roundHandler() {
-  if (wonRound === true) {
+  if (getWinCondition === true) {
     score++;
-    wonRound = (_readOnlyError("wonRound"), false);
     guessBox.innerHTML += "";
   }
 
+  chance.innerHTML += "<p>Chances:</p>\n    <div class=\"chanceBox\">".concat(GetChances(1), "</div>\n    <img src=\"\" alt=\"\">");
   mysteryWord = Array.from(levelSelector());
   mysteryWord.forEach(function (letter) {
-    guessBox.innerHTML += "<div class=\"guessBox_spaces\"><p hidden>".concat(letter, "</p></div>");
+    guessBox.innerHTML += "<p class=\"guessBox_spaces\">".concat(letter, "</p>");
   });
 };
 
-var wonRound = function wonRound() {
-  ///
-  return false;
+var getWinCondition = function getWinCondition() {
+  if (guessBox_spaces.every(function (guess) {
+    return guess.style.color = "black";
+  })) {
+    return true;
+  } else {
+    return false;
+  }
 };
 
-var GameOver = function GameOver() {};
+var generatePopUp = function generatePopUp() {
+  modal.style.display = "block";
+  modal.innerHTML += "<p class=\"EndgameState\">You're fired!</p>\n    <button class=\"nextStep\"></button>";
+};
+
+var GenerateEndingOne = function GenerateEndingOne() {};
+
+var applyFailPenalty = function applyFailPenalty() {
+  if (chanceBox.innerHTML == 0) {
+    TriggerGameOver();
+  } else {
+    UpdateChanceBox();
+  }
+};
+
+var TriggerGameOver = function TriggerGameOver() {
+  console.log("You lose");
+  generatePopUp();
+};
 
 roundHandler();
 var guessBox_spaces = document.querySelectorAll('.guessBox_spaces');
 var alphaButton = document.querySelectorAll('.alphaButtons_button');
-console.log(guessBox_spaces);
-console.log(alphaButton);
+var chanceBox = document.querySelector('.chanceBox');
+var modal = document.getElementById("myModal");
 alphaButton.forEach(function (button) {
   button.addEventListener('click', function () {
     if (mysteryWord.includes(button.innerHTML)) {
       console.log(button.innerHTML);
       guessBox_spaces.forEach(function (space) {
-        if (space.innerHTML == button.innerHTML) {//space.style.
+        if (space.innerHTML == button.innerHTML) {
+          space.style.color = "black";
         }
       });
+    } else {
+      applyFailPenalty();
     }
+
+    button.disabled = true;
+    button.style.opacity = "0.5";
+    getWinCondition();
+    console.log(getWinCondition());
   });
 });

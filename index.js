@@ -5,6 +5,7 @@ const thirdArray = [];
 const fourthArray = ["BLOOM","CHEESE","BLOOD"];
 const fifthArray =[];
 const sixthArray =[];
+const seventhArray =[];
 let score = 0;
 let mysteryWord = [];
 let countCorrectGuesses =0;
@@ -12,6 +13,8 @@ let countCorrectGuesses =0;
 const theGallows = document.querySelector('.gallows');
 const alphaButtons = document.querySelector('.alphaButtons');
 const guessBox = document.querySelector('.guessBox');
+const chance = document.querySelector('.chance')
+
 
 alphabetArray.forEach((letter) =>{
     alphaButtons.innerHTML +=`<button class="alphaButtons_button">${letter}</button>`;
@@ -27,6 +30,15 @@ const GetChances = (level) =>{
     }
 
     return chances;
+}
+
+const GetCurrentChances = () =>{
+    return chanceBox.innerHTML;
+}
+
+const UpdateChanceBox = () =>{
+    let currentChance = GetCurrentChances();
+    chanceBox.innerHTML = currentChance-1;
 }
 
 
@@ -53,39 +65,74 @@ const levelSelector = () =>{
 }
 
 const roundHandler = () =>{
-   if(wonRound === true) {
+   if(getWinCondition === true) {
     score++;
-    wonRound =false;
     guessBox.innerHTML+= ``;
    }
+    chance.innerHTML += `<p>Chances:</p>
+    <div class="chanceBox">${GetChances(1)}</div>
+    <img src="" alt="">`;
     mysteryWord = Array.from(levelSelector());
     mysteryWord.forEach((letter) =>{
-       guessBox.innerHTML +=`<div class="guessBox_spaces"><p hidden>${letter}</p></div>`;
+       guessBox.innerHTML +=`<p class="guessBox_spaces">${letter}</p>`;
     })
 }
-const wonRound =() =>{
-    ///
-    return false;
+const getWinCondition =() =>{
+    if(guessBox_spaces.every( guess => guess.style.color ="black")){
+        return true;
+    }
+    else{
+        return false;
+    }
 }
 
-const GameOver =()=>{
+const generatePopUp =() =>{
+    modal.style.display = "block";
+    modal.innerHTML += `<p class="EndgameState">You're fired!</p>
+    <button class="nextStep"></button>`;
+}
+
+const GenerateEndingOne = () =>{
+
+}
+
+const applyFailPenalty = ()=>{
+    if(chanceBox.innerHTML ==0){
+        TriggerGameOver();
+    }
+    else{
+        UpdateChanceBox();
+    }
+}
+
+const TriggerGameOver =()=>{
+    console.log("You lose");
+    generatePopUp();
 
 }
 roundHandler();
+
 const guessBox_spaces = document.querySelectorAll('.guessBox_spaces');
 const alphaButton = document.querySelectorAll('.alphaButtons_button');
+const chanceBox = document.querySelector('.chanceBox');
+const modal = document.getElementById("myModal");
 
-
-console.log(guessBox_spaces);
-console.log(alphaButton);
 alphaButton.forEach((button)=>{button.addEventListener('click', () => {
     if(mysteryWord.includes(button.innerHTML)){
         console.log(button.innerHTML);
         guessBox_spaces.forEach((space)=>{
             if(space.innerHTML ==button.innerHTML){
-                //space.style.
+                space.style.color ="black";
+
             }})
     }
+    else{
+       applyFailPenalty(); 
+    }
+    button.disabled = true;
+    button.style.opacity ="0.5";
+    getWinCondition();
+    console.log(getWinCondition());
 });
 })
 

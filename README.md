@@ -1,2 +1,2 @@
-# Hangman
-So this is how it ends? Here? Now? Make your guesses. Make your choices. 
+# The Hangman
+Congratulations on you're new job! The game is the same but the rewards are far greater! A stable job in this economy? It's more likely then you'd think, and new work is ALWAYS rolling in.
