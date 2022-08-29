@@ -60,6 +60,11 @@ h1 {
   margin: 0;
 }
 
+.scoreBox {
+  display: flex;
+  justify-content: space-between;
+}
+
 .modal {
   display: none;
   position: fixed;

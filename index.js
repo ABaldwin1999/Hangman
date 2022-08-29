@@ -1,157 +1,12 @@
-// const alphabetArray = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","Y","X","Z"];
-// const firstArray = ["THRIFTLESS","THUMBSCREW","TOPAZ","TRANSCRIPT","TRANSPLANT","MNEMONIC","NYMPH"];
-// const secondArray = ["QUICK","OBTUSE","GNARLED","AVARICE","PUTRID","OBSIDIAN","VAGABOND","VANGUARD"];
-// const thirdArray = [];
-// const fourthArray = ["BLOOM","CHEESE","BLOOD"];
-// const fifthArray =[];
-// const sixthArray =["EASY","HAPPY","GREEN","LEEK"];
-// let score = 0;
-// let mysteryWord = [];
-// let countCorrectGuesses =0;
-
-// const theGallows = document.querySelector('.gallows');
-// const alphaButtons = document.querySelector('.alphaButtons');
-// const guessBox = document.querySelector('.guessBox');
-// const chance = document.querySelector('.chance')
-
-
-// alphabetArray.forEach((letter) =>{
-//     alphaButtons.innerHTML +=`<button class="alphaButtons_button">${letter}</button>`;
-// })
-
-// const GetChances = (level) =>{
-//     let chances =0;
-//     if(1<=level<3){
-//         chances = 3;
-//     }
-//     else if(3<=level<6){
-//         chances = 4;
-//     }
-//     else if(level ===6){
-//         chances =5;
-//     }
-
-//     return chances;
-// }
-
-// const GetCurrentChances = () =>{
-//     return chanceBox.innerHTML;
-// }
-
-// const UpdateChanceBox = () =>{
-//     let currentChance = GetCurrentChances();
-//     chanceBox.innerHTML = currentChance-1;
-// }
-
-
-// const guessHandler = (button) =>{
-//     ////if all are true then return that we need to summon round handler again to start a new round
-//     console.log("hi");
-//     console.log(button.innerHTML);
-
-//     ///at bottom of function if(chances==0){}
-// }
-
-// const levelSelector = () =>{
-//     let Word = "" ;
-//     let level =0;
-//     if(score===0){
-//         Word = firstArray[0];//Math.random(0,firstArray.length)];
-//         level = 1
-//     }
-//     //else if(0<score<=2){
-//     //    const mysteryWord = secondArray[Math.random(0,firstArray.length)];
-//    // }
-//     return Word;//,level;
-
-// }
-
-// const roundHandler = () =>{
-//     chance.innerHTML += `<p>Chances:</p>
-//     <div class="chanceBox">${GetChances(1)}</div>
-//     <img src="" alt="">`;
-//     mysteryWord = Array.from(levelSelector());
-//     mysteryWord.forEach((letter) =>{
-//        guessBox.innerHTML +=`<p class="guessBox_spaces">${letter}</p>`;
-//     })
-//     if(getWinCondition() === true) {
-//         score++;
-//         guessBox.innerHTML+= ``;
-//        }
-// }
-// const getWinCondition =() =>{
-//     let win = true;
-//     guessBox_spaces.forEach((space) => {
-//         if(space.style.color !=="black"){
-//             win =false;
-//         }
-//     })
-//     return win;
-// }
-
-// const generatePopUp =(popUpState) =>{
-//     if(popUpState ===0)
-//         {
-//             modal.style.display = "block";
-//             modalContent.innerHTML += `<p class="EndgameState">You're fired!</p>
-//             <button class="nextStep"></button>`;
-//         }
-
-// }
-
-// const GenerateEndingOne = () =>{
-
-// }
-
-// const applyFailPenalty = ()=>{
-//     if(chanceBox.innerHTML ==0){
-//         TriggerGameOver();
-//     }
-//     else{
-//         UpdateChanceBox();
-//     }
-// }
-
-// const TriggerGameOver =()=>{
-//     //if(level===1 && )
-//     generatePopUp(0);
-
-// }
-// roundHandler();
-
-// const guessBox_spaces = document.querySelectorAll('.guessBox_spaces');
-// const alphaButton = document.querySelectorAll('.alphaButtons_button');
-// const chanceBox = document.querySelector('.chanceBox');
-// const modal = document.getElementById("myModal");
-// const modalContent = document.querySelector('.modal_content');
-
-// alphaButton.forEach((button)=>{button.addEventListener('click', () => {
-//     if(mysteryWord.includes(button.innerHTML)){
-//         console.log(button.innerHTML);
-//         guessBox_spaces.forEach((space)=>{
-//             if(space.innerHTML ==button.innerHTML){
-//                 space.style.color ="black";
-
-//             }})
-//     }
-//     else{
-//        applyFailPenalty(); 
-//     }
-//     button.disabled = true;
-//     button.style.opacity ="0.5";
-//     getWinCondition();
-//     console.log(getWinCondition());
-// });
-// })
 const alphabetArray = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","Y","X","Z"];
-const firstArray = ["QUICK","OBTUSE","GNARLED","AVARICE","PUTRID","OBSIDIAN","VAGABOND","VANGUARD"];
-const secondArray = [];
-const thirdArray = [];
-const fourthArray = ["BLOOM","CHEESE","BLOOD"];
-const fifthArray =[];
-const sixthArray =[];
-const seventhArray =[];
+const firstArray = ["AND","THRIFTLESS","THUMBSCREW","TOPAZ","TRANSCRIPT","TRANSPLANT","MNEMONIC","NYMPH"];
+const secondArray = ["QUICK","OBTUSE","GNARLED","AVARICE","PUTRID","OBSIDIAN","VAGABOND","VANGUARD"];
+const thirdArray = ["ANGER","TROUBLE","WICKED","FLAME","BEMUSED","ALWAYS"];
+const fourthArray = ["BLOOM","CHEESE","BLOOD","JINGLE"];
+const fifthArray =["FLOOD","SPILL","BLIND"];
+const sixthArray =["EASTER","EASY","HAPPY","GREEN","LEEK"];
 let score = 0;
+let level = 0;
 let mysteryWord = [];
 let countCorrectGuesses =0;
 
@@ -197,30 +52,64 @@ const guessHandler = (button) =>{
 
 const levelSelector = () =>{
     let Word = "" ;
-    let level =0;
-    if(score===0){
-        Word = firstArray[0];//Math.random(0,firstArray.length)];
-        level = 1
+    if(level===1){
+        Word = firstArray[Math.floor(Math.random()*firstArray.length)];
     }
-    //else if(0<score<=2){
-    //    const mysteryWord = secondArray[Math.random(0,firstArray.length)];
-   // }
-    return Word;//,level;
+    else if(level ===2){
+        Word = firstArray[0];//Word = secondArray[Math.random(0,firstArray.length)];
+    }
+    else if(level ===3){
+        Word= secondArray[Math.random(0,firstArray.length)];
+    }
+    else if(level ===4){
+        Word = secondArray[Math.random(0,firstArray.length)];
+    }
+    else if(level ===5){
+        Word = secondArray[Math.random(0,firstArray.length)];
+    }
+    else if(level ===6){
+        Word = secondArray[Math.random(0,firstArray.length)];
+    }
+    return Word;
 
 }
 
-const roundHandler = () =>{
-   if(getWinCondition === true) {
-    score++;
-    guessBox.innerHTML+= ``;
-   }
+const reset =()=>{
     chance.innerHTML += `<p>Chances:</p>
-    <div class="chanceBox">${GetChances(1)}</div>
+    <div class="chanceBox">${GetChances(level)}</div>
     <img src="" alt="">`;
     mysteryWord = Array.from(levelSelector());
     mysteryWord.forEach((letter) =>{
        guessBox.innerHTML +=`<p class="guessBox_spaces">${letter}</p>`;
     })
+}
+
+const initFirstRound =()=>{
+    level++;
+    reset();
+}
+
+const clearRound =()=>{
+    score++;
+    level++;
+    chance.innerHTML = ``;
+    guessBox.innerHTML= ``;
+}
+
+const resetButtons =()=>{
+
+}
+
+const roundHandler = () =>{
+   if(getWinCondition()) {
+    clearRound();
+    reset();
+    resetButtons();
+    generatePopUp(1);
+   }
+
+
+
 }
 const getWinCondition =() =>{
     let win = true;
@@ -231,11 +120,37 @@ const getWinCondition =() =>{
     })
     return win;
 }
+// const getTotalWinCondition =() =>{
+//     let win = true;
+//     guessBox_spaces.forEach((space) => {
+//         win = true;
+//         if(space.style.color !=="black"){
+//             win =false;
+//         }
+//     })
+//     return win;
+// }
 
-const generatePopUp =() =>{
-    modal.style.display = "block";
-    modal.innerHTML += `<p class="EndgameState">You're fired!</p>
-    <button class="nextStep"></button>`;
+
+
+const generatePopUp =(instance) =>{
+    switch (instance) {
+        case 0:
+            modal.style.display = "block";
+            modalContent.innerHTML += `<h1 class="EndgameTitle">You're fired!</h1>
+            <p class="EndgameContent"></p>
+            <button class="nextStep">Away with you</button>`;
+            break;
+        case 1:
+            modal.style.display = "block";
+            modalContent.innerHTML += `<h1 class="EndgameTitle">Remove the body</h1>
+            <p class="EndgameContent">A nice clean snap, no struggle: a good show for the crowds. Next!</p>
+            <button class="nextStep">Day 2</button>`;
+            break;
+        default:
+            break;
+    }
+
 }
 
 const GenerateEndingOne = () =>{
@@ -243,7 +158,7 @@ const GenerateEndingOne = () =>{
 }
 
 const applyFailPenalty = ()=>{
-    if(chanceBox.innerHTML ==0){
+    if(chanceBox.innerHTML ==0){///&& level=0 && no correct guesses have been made
         TriggerGameOver();
     }
     else{
@@ -252,11 +167,10 @@ const applyFailPenalty = ()=>{
 }
 
 const TriggerGameOver =()=>{
-    console.log("You lose");
     generatePopUp();
 
 }
-roundHandler();
+initFirstRound();
 
 const guessBox_spaces = document.querySelectorAll('.guessBox_spaces');
 const alphaButton = document.querySelectorAll('.alphaButtons_button');
@@ -278,8 +192,8 @@ alphaButton.forEach((button)=>{button.addEventListener('click', () => {
     }
     button.disabled = true;
     button.style.opacity ="0.5";
-    getWinCondition();
     console.log(getWinCondition());
+    roundHandler();
 });
 })
 
