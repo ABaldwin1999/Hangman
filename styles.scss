@@ -1,15 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Rubik+Dirt&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=MedievalSharp&family=Pacifico&family=Rubik+Dirt&display=swap');
 
 $title-font:'Pacifico',cursive;
-$answer-font:'Rubik Dirt', cursive;;
+$main-font:'MedievalSharp', cursive;
 
 $button-color: #918E85;
 
+body{
+    background-image:linear-gradient(rgb(211, 0, 0) 20%, #333 90%);
+    background-size: contain;
+    background-repeat:no-repeat;
+}
 
 h1{
     text-align: center;
     font-family: $title-font;
     font-size: 3rem;
+    background: -webkit-linear-gradient(rgb(211, 0, 0), #333);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 .gallows{
     display: flex;
@@ -19,13 +27,12 @@ h1{
 .alphaButtons{
     width:300px;
     height: auto;
-    //background-color: rgb(99, 0, 0);
-    background-image:url('./wood-background.jpg');
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     padding: 20px;
+    margin: 5%;
     border-radius: 5px;
     &_button{
         width: 10%;
@@ -33,12 +40,10 @@ h1{
         margin: 2%;
         height: auto;
         color: white;
-        background-color: $button-color;
+        background-image:url('./wood-background.jpg');
+        font-family: $main-font;
         border-radius: 5px;
         
-    }
-    &_button:hover{
-        color:red;
     }
 }
 
@@ -50,15 +55,14 @@ h1{
     align-items: center;
     flex-wrap: wrap;
     padding: 20px;
+    background-color: white;
+    border: 4px solid black;
+    border-radius: 5px;
     &_spaces{ 
-        p{
-            padding: 0;
-            margin: 0;
-        }
         width: 10%;
         user-select: none;  
         text-align: right;
-        font-family: $answer-font;
+        font-family: $main-font;
         font-size: 2rem;
         padding: 5px;
         margin: 10px;
@@ -69,13 +73,30 @@ h1{
 }
 .scoreBox{
   display: flex;
-  justify-content: space-between;
+  justify-content:left ;
+  font-family: $title-font;
+  .chance{
+    font-size: 2rem;
+    display: flex;
+    margin:5px;
+    justify-content:space-evenly;
+    align-items:flex-start;
+    .chanceBox{
+        height:40px;
+    }
+    img{
+        height:50px;
+        width: auto;
+    }
+  }
 }
+
+
 
 
  .modal {
     display: none; 
-    position: fixed; 
+    position: absolute; 
     z-index: 1; 
     left: 0;
     top: 0;
@@ -84,26 +105,22 @@ h1{
     overflow: auto; 
     background-color: rgb(0,0,0);
     background-color: rgba(0,0,0,0.4); 
+    font-family: $main-font;
     &_content {
-      background-color: #fefefe;
-      margin: 15% auto; 
+        background-color: #D6CCA9;
+      display: inline-block;
+      margin: 5%;// auto; 
       padding: 20px;
-      border: 1px solid #888;
       width: 80%; 
       text-align: center;
+      border-radius: 5px;
+      button{
+        width: 200px;
+        height: auto;
+        color: white;
+        background-image:url('./wood-background.jpg');
+      }
     }
   }
-  .close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-  }
-  
-  .close:hover,
-  .close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-  } 
+ 
 

@@ -1,2 +1,6 @@
 # The Hangman
-Congratulations on you're new job! The game is the same but the rewards are far greater! A stable job in this economy? It's more likely then you'd think, and new work is ALWAYS rolling in.
+
+A game of Hangman with six rounds to play and three endings.
+
+
+One bug known: the function getChances which should decrease the chances given as the game progresses does not reduce the number of chances given. 
