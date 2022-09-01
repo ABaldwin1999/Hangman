@@ -55,7 +55,6 @@ let mysteryWord = [];
 const theGallows = document.querySelector(".gallows");
 const alphaButtons = document.querySelector(".alphaButtons");
 const guessBox = document.querySelector(".guessBox");
-const backgroundColor = document.querySelector(".myBody");
 const chance = document.querySelector(".chance");
 
 alphabetArray.forEach((letter) => {
@@ -89,24 +88,19 @@ const levelSelector = () => {
     Word = firstArray[Math.floor(Math.random() * firstArray.length)];
   } else if (level === 2) {
     Word = secondArray[Math.floor(Math.random() * secondArray.length)];
-    document.body.style.backgroundColor =
-      "linear-gradient(to bottom, rgba(31, 31, 31, 0.966), rgba(255, 0, 0, 0.105))";
+    document.body.style.backgroundColor ="linear-gradient(to bottom, rgba(31, 31, 31, 0.966), rgba(255, 0, 0, 0.105))";
   } else if (level === 3) {
     Word = thirdArray[Math.floor(Math.random() * thirdArray.length)];
-    document.body.style.backgroundColor =
-      "linear-gradient(to bottom, rgba(31, 31, 31, 0.966), rgba(255, 0, 0, 0.205))";
+    document.body.style.backgroundColor ="linear-gradient(to bottom, rgba(31, 31, 31, 0.966), rgba(255, 0, 0, 0.205))";
   } else if (level === 4) {
     Word = fourthArray[Math.floor(Math.random() * fourthArray.length)];
-    document.body.style.backgroundColor =
-      "linear-gradient(to bottom, rgba(31, 31, 31, 0.966), rgba(255, 0, 0, 0.405))";
+    document.body.style.backgroundColor ="linear-gradient(to bottom, rgba(31, 31, 31, 0.966), rgba(255, 0, 0, 0.405))";
   } else if (level === 5) {
     Word = fifthArray[Math.floor(Math.random() * fifthArray.length)];
-    document.body.style.backgroundColor =
-      "linear-gradient(to bottom, rgba(31, 31, 31, 0.966), rgba(255, 0, 0, 0.805))";
+    document.body.style.backgroundColor ="linear-gradient(to bottom, rgba(31, 31, 31, 0.966), rgba(255, 0, 0, 0.805))";
   } else if (level === 6) {
     Word = sixthArray[Math.floor(Math.random() * sixthArray.length)];
-    document.body.style.backgroundColor =
-      "linear-gradient(to bottom, rgba(31, 31, 31, 0.966), rgba(255, 0, 0, 0.905))";
+    document.body.style.backgroundColor ="linear-gradient(to bottom, rgba(31, 31, 31, 0.966), rgba(255, 0, 0, 0.905))";
   }
   console.log(Word);
   return Word;

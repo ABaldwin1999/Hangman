@@ -12,7 +12,6 @@ var mysteryWord = [];
 var theGallows = document.querySelector(".gallows");
 var alphaButtons = document.querySelector(".alphaButtons");
 var guessBox = document.querySelector(".guessBox");
-var backgroundColor = document.querySelector(".myBody");
 var chance = document.querySelector(".chance");
 alphabetArray.forEach(function (letter) {
   alphaButtons.innerHTML += "<button class=\"alphaButtons_button\">".concat(letter, "</button>");
