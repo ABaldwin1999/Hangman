@@ -9,11 +9,11 @@ var fifthArray = ["FLOOD", "SPILL", "BLIND"];
 var sixthArray = ["EASTER", "EASY", "HAPPY", "GREEN", "LEEK"];
 var level = 0;
 var mysteryWord = [];
-var theGallows = document.querySelector('.gallows');
-var alphaButtons = document.querySelector('.alphaButtons');
-var guessBox = document.querySelector('.guessBox');
-var backgroundColor = document.querySelector('.myBody');
-var chance = document.querySelector('.chance');
+var theGallows = document.querySelector(".gallows");
+var alphaButtons = document.querySelector(".alphaButtons");
+var guessBox = document.querySelector(".guessBox");
+var backgroundColor = document.querySelector(".myBody");
+var chance = document.querySelector(".chance");
 alphabetArray.forEach(function (letter) {
   alphaButtons.innerHTML += "<button class=\"alphaButtons_button\">".concat(letter, "</button>");
 });
@@ -90,7 +90,7 @@ var initFirstRound = function initFirstRound() {
 };
 
 var clearRound = function clearRound(guessBox_spaces, chanceBox) {
-  chance.innerHTML = '';
+  chance.innerHTML = "";
   guessBox.innerHTML = "";
   guessBox_spaces.forEach(function (space) {
     space.innerHTML = "";
@@ -145,15 +145,15 @@ var closeContent = function closeContent() {
 };
 
 var closePopUp = function closePopUp() {
-  var close = document.querySelector('.close');
-  close.addEventListener('click', function () {
+  var close = document.querySelector(".close");
+  close.addEventListener("click", function () {
     closeContent();
   });
 };
 
 var replay = function replay(guessBox_spaces, chanceBox) {
-  var replay = document.querySelector('.replay');
-  replay.addEventListener('click', function () {
+  var replay = document.querySelector(".replay");
+  replay.addEventListener("click", function () {
     score = 0;
     level = 0;
     closeContent();
@@ -164,8 +164,8 @@ var replay = function replay(guessBox_spaces, chanceBox) {
 };
 
 var nextPopUp = function nextPopUp(ending, guessBox_spaces, chanceBox) {
-  var nextStep = document.querySelector('.nextStep');
-  nextStep.addEventListener('click', function () {
+  var nextStep = document.querySelector(".nextStep");
+  nextStep.addEventListener("click", function () {
     modalContent.innerHTML = "";
 
     switch (ending) {
@@ -232,12 +232,6 @@ var generatePopUp = function generatePopUp(instance, guessBox_spaces, chanceBox)
   }
 };
 
-var playScream = function playScream() {
-  var scream = new Audio('Down.mp3');
-  scream.loop = false;
-  audio.play();
-};
-
 var applyFailPenalty = function applyFailPenalty(guessBox_spaces, chanceBox) {
   if (chanceBox.innerHTML == 0) {
     ///&& level=0 && no correct guesses have been made
@@ -252,13 +246,13 @@ var TriggerGameOver = function TriggerGameOver(guessBox_spaces, chanceBox) {
 };
 
 var modal = document.getElementById("myModal");
-var modalContent = document.querySelector('.modal_content');
+var modalContent = document.querySelector(".modal_content");
 initFirstRound();
-var alphaButton = document.querySelectorAll('.alphaButtons_button');
+var alphaButton = document.querySelectorAll(".alphaButtons_button");
 alphaButton.forEach(function (button) {
-  button.addEventListener('click', function () {
-    var guessBox_spaces = document.querySelectorAll('.guessBox_spaces');
-    var chanceBox = document.querySelector('.chanceBox');
+  button.addEventListener("click", function () {
+    var guessBox_spaces = document.querySelectorAll(".guessBox_spaces");
+    var chanceBox = document.querySelector(".chanceBox");
 
     if (mysteryWord.includes(button.innerHTML)) {
       guessBox_spaces.forEach(function (space) {
