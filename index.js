@@ -159,7 +159,7 @@ const roundHandler = (guessBox_spaces, chanceBox) => {
     clearRound(guessBox_spaces, chanceBox);
     resetButtons();
     reset(guessBox_spaces);
-    if (level === 6) {
+    if (level === 7) {
       generatePopUp(-1, guessBox_spaces, chanceBox);
     } else {
       generatePopUp(1, guessBox_spaces, chanceBox);
@@ -291,7 +291,6 @@ const generatePopUp = (instance, guessBox_spaces, chanceBox) => {
 
 const applyFailPenalty = (guessBox_spaces, chanceBox) => {
   if (chanceBox.innerHTML == 0) {
-    ///&& level=0 && no correct guesses have been made
     TriggerGameOver(guessBox_spaces, chanceBox);
   } else {
     UpdateChanceBox(chanceBox);
