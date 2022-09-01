@@ -1,144 +1,142 @@
-@import url('https://fonts.googleapis.com/css2?family=MedievalSharp&family=Pacifico&family=Rubik+Dirt&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=MedievalSharp&family=Pacifico&family=Rubik+Dirt&display=swap");
 
-$title-font:'Pacifico',cursive;
-$main-font:'MedievalSharp', cursive;
+$title-font: "Pacifico", cursive;
+$main-font: "MedievalSharp", cursive;
 
-$button-color: #918E85;
+$button-color: #918e85;
 
-body{
-    background-image:linear-gradient(to bottom,rgba(0, 0, 0, 0.966), rgba(255, 0, 0, 0));
-    background-size: contain;
-    background-repeat:no-repeat;
+body {
+  background-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.966),
+    rgba(255, 0, 0, 0)
+  );
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
-h1{
-    text-align: center;
-    font-family: $title-font;
-    font-size: 3rem;
-    background: -webkit-linear-gradient(rgb(242, 0, 0), rgb(140, 136, 136));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-.gallows{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content:space-evenly;
-}
-.alphaButtons{
-    width:300px;
-    height: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    padding: 20px;
-    margin: 5%;
-    border-radius: 5px;
-    &_button{
-        width: 10%;
-        padding: 2%;
-        margin: 2%;
-        height: auto;
-        color: white;
-        background-image:url('./wood-background.jpg');
-        font-family: $main-font;
-        border-radius: 5px;
-        
-    }
-}
-
-.guessBox{
-    width:300px;
-    height: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    padding: 20px;
-    background-color: white;
-    border: 4px solid black;
-    border-radius: 5px;
-    &_spaces{ 
-        width: 10%;
-        user-select: none;  
-        text-align: center;
-        font-family: $main-font;
-        font-size: 2rem;
-        padding: 5px;
-        margin: 10px;
-        color: white;
-        border-bottom: 4px solid black;
-    }
-
-}
-.scoreBox{
-  display: flex;
-  justify-content:left ;
+h1 {
+  text-align: center;
   font-family: $title-font;
-  .chance{
+  font-size: 3rem;
+  background: -webkit-linear-gradient(rgb(242, 0, 0), rgb(140, 136, 136));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.gallows {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.alphaButtons {
+  width: 300px;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 20px;
+  margin: 5%;
+  border-radius: 5px;
+  &_button {
+    width: 10%;
+    padding: 2%;
+    margin: 2%;
+    height: auto;
+    color: white;
+    background-image: url("./wood-background.jpg");
+    font-family: $main-font;
+    border-radius: 5px;
+  }
+}
+
+.guessBox {
+  width: 300px;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 20px;
+  background-color: white;
+  border: 4px solid black;
+  border-radius: 5px;
+  &_spaces {
+    width: 10%;
+    user-select: none;
+    text-align: center;
+    font-family: $main-font;
+    font-size: 2rem;
+    padding: 5px;
+    margin: 10px;
+    color: white;
+    border-bottom: 4px solid black;
+  }
+}
+.scoreBox {
+  display: flex;
+  justify-content: left;
+  font-family: $title-font;
+  .chance {
     font-size: 2rem;
     display: flex;
-    margin:5px;
-    justify-content:space-evenly;
-    align-items:center;
+    margin: 5px;
+    justify-content: space-evenly;
+    align-items: center;
     background-color: white;
     height: 100px;
     border: 4px solid black;
-    .chanceBox{
-        height:40px;
-        padding: 5px;
-        padding-bottom: 20px;
+    .chanceBox {
+      height: 40px;
+      padding: 5px;
+      padding-bottom: 20px;
     }
-    img{
-        height:50px;
-        width: auto;
+    img {
+      height: 50px;
+      width: auto;
     }
   }
 }
 
-
- .modal {
-    display: none; 
-    position: absolute; 
-    z-index: 1; 
-    left: 0;
-    top: 0;
-    width: 100%; 
-    height: 100%; 
-    overflow: auto; 
-    background-color: rgb(0,0,0);
-    background-color: rgba(0,0,0,0.4); 
-    font-family: $main-font;
-    &_content {
-        background-color: #D6CCA9;
-      display: inline-block;
-      margin: 5%;
-      padding: 20px;
-      width: 80%; 
-      text-align: center;
-      border-radius: 5px;
-      button{
-        width: 200px;
-        height: auto;
-        color: white;
-        background-image:url('./wood-background.jpg');
-      }
+.modal {
+  display: none;
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+  font-family: $main-font;
+  &_content {
+    background-color: #d6cca9;
+    display: inline-block;
+    margin: 5%;
+    padding: 20px;
+    width: 80%;
+    text-align: center;
+    border-radius: 5px;
+    button {
+      width: 200px;
+      height: auto;
+      color: white;
+      background-image: url("./wood-background.jpg");
     }
   }
+}
 
-  @media  only screen and (min-width: 768px) {
-    .guessBox{
-        width: 500px;
-        height:300px
-    }
-    .alphaButtons{
-        width: 500px;
-        height:300px
-        &_button{
-            width:20%;
-            height: 20%;
-        }
+@media only screen and (min-width: 768px) {
+  .guessBox {
+    width: 500px;
+    height: 300px;
+  }
+  .alphaButtons {
+    width: 500px;
+    height: 300px &_button {
+      width: 20%;
+      height: 20%;
     }
   }
- 
-
+}
