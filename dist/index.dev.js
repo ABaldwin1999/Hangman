@@ -12,6 +12,7 @@ var mysteryWord = [];
 var theGallows = document.querySelector('.gallows');
 var alphaButtons = document.querySelector('.alphaButtons');
 var guessBox = document.querySelector('.guessBox');
+var backgroundColor = document.querySelector('.myBody');
 var chance = document.querySelector('.chance');
 alphabetArray.forEach(function (letter) {
   alphaButtons.innerHTML += "<button class=\"alphaButtons_button\">".concat(letter, "</button>");
@@ -19,7 +20,6 @@ alphabetArray.forEach(function (letter) {
 
 var GetChances = function GetChances() {
   var chances = 0;
-  console.log(level);
 
   if (0 < level < 3) {
     chances = 8;
@@ -48,14 +48,19 @@ var levelSelector = function levelSelector() {
     Word = firstArray[Math.floor(Math.random() * firstArray.length)];
   } else if (level === 2) {
     Word = secondArray[Math.floor(Math.random() * secondArray.length)];
+    document.body.style.backgroundColor = "linear-gradient(to bottom, rgba(31, 31, 31, 0.966), rgba(255, 0, 0, 0.105))";
   } else if (level === 3) {
     Word = thirdArray[Math.floor(Math.random() * thirdArray.length)];
+    document.body.style.backgroundColor = "linear-gradient(to bottom, rgba(31, 31, 31, 0.966), rgba(255, 0, 0, 0.205))";
   } else if (level === 4) {
     Word = fourthArray[Math.floor(Math.random() * fourthArray.length)];
+    document.body.style.backgroundColor = "linear-gradient(to bottom, rgba(31, 31, 31, 0.966), rgba(255, 0, 0, 0.405))";
   } else if (level === 5) {
     Word = fifthArray[Math.floor(Math.random() * fifthArray.length)];
+    document.body.style.backgroundColor = "linear-gradient(to bottom, rgba(31, 31, 31, 0.966), rgba(255, 0, 0, 0.805))";
   } else if (level === 6) {
     Word = sixthArray[Math.floor(Math.random() * sixthArray.length)];
+    document.body.style.backgroundColor = "linear-gradient(to bottom, rgba(31, 31, 31, 0.966), rgba(255, 0, 0, 0.905))";
   }
 
   console.log(Word);
@@ -153,8 +158,7 @@ var replay = function replay(guessBox_spaces, chanceBox) {
     level = 0;
     closeContent();
     clearRound(guessBox_spaces, chanceBox);
-    resetButtons(); //reset(guessBox_spaces);
-
+    resetButtons();
     initFirstRound();
   });
 };
@@ -226,6 +230,12 @@ var generatePopUp = function generatePopUp(instance, guessBox_spaces, chanceBox)
       nextPopUp(2, guessBox_spaces, chanceBox);
       break;
   }
+};
+
+var playScream = function playScream() {
+  var scream = new Audio('Down.mp3');
+  scream.loop = false;
+  audio.play();
 };
 
 var applyFailPenalty = function applyFailPenalty(guessBox_spaces, chanceBox) {

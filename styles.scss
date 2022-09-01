@@ -6,7 +6,7 @@ $main-font:'MedievalSharp', cursive;
 $button-color: #918E85;
 
 body{
-    background-image:linear-gradient(rgb(211, 0, 0) 20%, #333 90%);
+    background-image:linear-gradient(to bottom,rgba(0, 0, 0, 0.966), rgba(255, 0, 0, 0));
     background-size: contain;
     background-repeat:no-repeat;
 }
@@ -15,7 +15,7 @@ h1{
     text-align: center;
     font-family: $title-font;
     font-size: 3rem;
-    background: -webkit-linear-gradient(rgb(211, 0, 0), #333);
+    background: -webkit-linear-gradient(rgb(242, 0, 0), rgb(140, 136, 136));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
@@ -61,7 +61,7 @@ h1{
     &_spaces{ 
         width: 10%;
         user-select: none;  
-        text-align: right;
+        text-align: center;
         font-family: $main-font;
         font-size: 2rem;
         padding: 5px;
@@ -80,9 +80,14 @@ h1{
     display: flex;
     margin:5px;
     justify-content:space-evenly;
-    align-items:flex-start;
+    align-items:center;
+    background-color: white;
+    height: 100px;
+    border: 4px solid black;
     .chanceBox{
         height:40px;
+        padding: 5px;
+        padding-bottom: 20px;
     }
     img{
         height:50px;
@@ -90,8 +95,6 @@ h1{
     }
   }
 }
-
-
 
 
  .modal {
@@ -109,7 +112,7 @@ h1{
     &_content {
         background-color: #D6CCA9;
       display: inline-block;
-      margin: 5%;// auto; 
+      margin: 5%;
       padding: 20px;
       width: 80%; 
       text-align: center;
@@ -120,6 +123,21 @@ h1{
         color: white;
         background-image:url('./wood-background.jpg');
       }
+    }
+  }
+
+  @media  only screen and (min-width: 768px) {
+    .guessBox{
+        width: 500px;
+        height:300px
+    }
+    .alphaButtons{
+        width: 500px;
+        height:300px
+        &_button{
+            width:20%;
+            height: 20%;
+        }
     }
   }
  

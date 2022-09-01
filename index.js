@@ -11,8 +11,8 @@ let mysteryWord = [];
 const theGallows = document.querySelector('.gallows');
 const alphaButtons = document.querySelector('.alphaButtons');
 const guessBox = document.querySelector('.guessBox');
+const backgroundColor = document.querySelector('.myBody');
 const chance = document.querySelector('.chance');
-
 
 alphabetArray.forEach((letter) =>{
     alphaButtons.innerHTML +=`<button class="alphaButtons_button">${letter}</button>`;
@@ -20,7 +20,6 @@ alphabetArray.forEach((letter) =>{
 
 const GetChances = () =>{
     let chances =0;
-    console.log(level);
     if(0<level <3){
         chances = 8;
     }
@@ -49,18 +48,23 @@ const levelSelector = () =>{
     }
     else if(level ===2){
         Word = secondArray[Math.floor(Math.random()*secondArray.length)];
+        document.body.style.backgroundColor ="linear-gradient(to bottom, rgba(31, 31, 31, 0.966), rgba(255, 0, 0, 0.105))";
     }
     else if(level ===3){
         Word= thirdArray[Math.floor(Math.random()*thirdArray.length)];
+        document.body.style.backgroundColor ="linear-gradient(to bottom, rgba(31, 31, 31, 0.966), rgba(255, 0, 0, 0.205))";
     }
     else if(level ===4){
         Word =fourthArray[Math.floor(Math.random()*fourthArray.length)];
+        document.body.style.backgroundColor ="linear-gradient(to bottom, rgba(31, 31, 31, 0.966), rgba(255, 0, 0, 0.405))";
     }
     else if(level ===5){
         Word = fifthArray[Math.floor(Math.random()*fifthArray.length)];
+        document.body.style.backgroundColor ="linear-gradient(to bottom, rgba(31, 31, 31, 0.966), rgba(255, 0, 0, 0.805))";
     }
     else if(level ===6){
         Word = sixthArray[Math.floor(Math.random()*sixthArray.length)];
+        document.body.style.backgroundColor ="linear-gradient(to bottom, rgba(31, 31, 31, 0.966), rgba(255, 0, 0, 0.905))";
     }
     console.log(Word);
     return Word;
@@ -163,7 +167,6 @@ const replay =(guessBox_spaces,chanceBox)=>{
         closeContent();
         clearRound(guessBox_spaces,chanceBox);
         resetButtons();
-        //reset(guessBox_spaces);
         initFirstRound();
 
     })
@@ -250,7 +253,11 @@ const generatePopUp =(instance,guessBox_spaces,chanceBox) =>{
     }
 }
 
-
+const playScream = ()=> {
+    const scream = new Audio('Down.mp3');
+    scream.loop = false;
+    audio.play(); 
+}
 
 
 const applyFailPenalty = (guessBox_spaces,chanceBox)=>{
