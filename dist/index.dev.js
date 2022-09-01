@@ -204,7 +204,7 @@ var generatePopUp = function generatePopUp(instance, guessBox_spaces, chanceBox)
       modal.style.display = "block";
       modalContent.innerHTML += "<h1 class=\"EndgameTitle\">You're fired!</h1>\n            <p class=\"EndgameContent\"></p>\n            <button class=\"nextStep\">Away with you</button>";
 
-      if (getTotalWinCondition == true && level == 1) {
+      if (getTotalWinCondition(guessBox_spaces) === true && level === 1) {
         nextPopUp(1, guessBox_spaces, chanceBox);
       } else {
         nextPopUp(0, guessBox_spaces, chanceBox);
