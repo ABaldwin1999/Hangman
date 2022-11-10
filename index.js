@@ -61,7 +61,7 @@ alphabetArray.forEach((letter) => {
   alphaButtons.innerHTML += `<button class="alphaButtons_button">${letter}</button>`;
 });
 
-const GetChances = () => {
+const GetChances = (level) => {
   let chances = 0;
   if (0 < level < 3) {
     chances = 8;
@@ -269,7 +269,8 @@ const generatePopUp = (instance, guessBox_spaces, chanceBox) => {
       modalContent.innerHTML += `<h1 class="EndgameTitle">Welcome!</h1>
             <p class="EndgameContent">Congratulations on you're new job! 
             The game is the same but the rewards are far greater! A stable job in this economy?
-             It's more likely then you'd think, and new work is ALWAYS rolling in. Make yourself at home.</p>
+             It's more likely then you'd think, and new work is ALWAYS rolling in. Make yourself at home with this
+             game of reverse Hangman where guessing the word hangs your man.</p>
             <button class="close">That was an ORDER</button>`;
       closePopUp();
       break;
