@@ -1,4 +1,5 @@
 # The Hangman
+https://abaldwin1999.github.io/Hangman/
 
 A game of reverse Hangman with six rounds to play and three endings. Built using JavaScript programming techniques and DOM manipulation.
 
